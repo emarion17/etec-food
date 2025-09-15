@@ -23,4 +23,5 @@ public class Entrega {
     @ManyToOne
     @JoinColumn("ID_PEDIDO")
     private Pedido pedido;
+    
 }
