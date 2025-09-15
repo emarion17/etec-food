@@ -20,8 +20,7 @@ public class Entrega {
     private String cep;
     @Column(name = "TX_COMPLEMENTO")
     private String complemento;
-    @ManyToOne
+    @OneToMany
     @JoinColumn("ID_PEDIDO")
     private Pedido pedido;
-    
 }
