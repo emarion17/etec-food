@@ -13,7 +13,7 @@ public class Entrega {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_ENTREGA")
     private Long id;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_CLIENTE")
     private Cliente cliente;
     @Column(name = "TX_CPF")
