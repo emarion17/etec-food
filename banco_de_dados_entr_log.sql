@@ -1,0 +1,35 @@
+create database trabalho_integrado_pw_bd
+
+use trabalho_integrado_pw_bd;
+
+create table TBL_ENTREGADOR (
+	ID_ENTREGADOR BIGINT PRIMARY KEY IDENTITY,
+	NOME VARCHAR(50) NOT NULL,
+	TELEFONE VARCHAR(50) NOT NULL,
+	ATIVO BIT
+);
+
+create table TBL_VEICULO (
+	ID_VEICULO BIGINT PRIMARY KEY IDENTITY,
+	PLACA VARCHAR(50) NOT NULL,
+	TP_VEICULO VARCHAR(50) NOT NULL,
+	ID_ENTREGADOR BIGINT NOT NULL,
+	FOREIGN KEY (ID_ENTREGADOR) REFERENCES TBL_ENTREGADOR(ID_ENTREGADOR)
+);
+
+insert into TBL_ENTREGADOR() values
+
+(1, 'Alexandro Rocha', '11988921239'),
+(2, 'Matheus Guerino', '11312988232'),
+(3, 'Ricardo Katayama', '11123811123'),
+(4, 'Julia Mastronni', '11281383129'),
+(5, 'Vitor Silva', '11192382137');
+
+insert into TBL_VEICULO values
+
+(1, 'ASD9Q12', 'MOTO', 5),
+(2, 'KWJ8C18', 'CARRO', 5),
+(3, 'QWK7L28', 'BICICLETA', 4),
+(4, 'KSA6O02', 'MOTO', 3),
+(5, 'LPA5P93', 'MOTO', 2),
+(6, 'MAN4S24', 'OUTRO', 1);
