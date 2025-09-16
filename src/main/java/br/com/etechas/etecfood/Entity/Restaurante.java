@@ -1,4 +1,6 @@
 package br.com.etechas.etecfood.Entity;
+import br.com.etechas.etecfood.enums.TipoCozinhaEnum;
+
 
 public class Restaurante {
     private Long id;
