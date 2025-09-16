@@ -14,10 +14,12 @@ public class Entrega {
     @Column(name = "ID_ENTREGA")
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "ID_CLIENTE")
+    @JoinColumn(name = "TX_CPF")
     private Cliente cliente;
-    @Column(name = "TX_CPF")
+    @Column(name = "TX_CEP")
     private String cep;
+    @Column(name = "TX_ENDERECO")
+    private String endereco;
     @Column(name = "TX_COMPLEMENTO")
     private String complemento;
     @OneToMany
