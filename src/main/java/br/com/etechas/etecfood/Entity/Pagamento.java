@@ -38,6 +38,6 @@ public class Pagamento {
 
     @OneToMany
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
-    private TipoFormaPagamentoEnum formaPagamento;
+    private FormaPagamento formaPagamento;
 
 }

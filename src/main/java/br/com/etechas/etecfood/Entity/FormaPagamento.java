@@ -1,5 +1,6 @@
 package br.com.etechas.etecfood.Entity;
 
+import br.com.etechas.etecfood.Enum.TipoFormaPagamentoEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,5 +22,5 @@ public class FormaPagamento {
     private String nome;
 
     @Column(name = "TP_TIPO")
-    private String tipo;
+    private TipoFormaPagamentoEnum tipo;
 }
