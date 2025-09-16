@@ -10,10 +10,10 @@ import lombok.Setter;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_CLIENTE")
-    private Long id;
     @Column(name = "TX_CPF")
     private String cpf;
+    @Column(name = "TX_NOME")
+    private String nome;
     @Column(name = "TX_EMAIL")
     private String email;
     @Column(name = "TX_TELEFONE")
