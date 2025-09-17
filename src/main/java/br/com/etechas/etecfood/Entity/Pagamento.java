@@ -40,4 +40,8 @@ public class Pagamento {
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
     private FormaPagamento formaPagamento;
 
+    @OneToOne
+    @JoinColumn(name = "ID_PEDIDO")
+    private Pedido pedido;
+
 }
