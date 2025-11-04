@@ -17,7 +17,7 @@ public class HorarioFuncionamento {
     private Long id;
 
     @Column(name = "diaSemana")
-    private DayOfWeek diaSemana;
+    private String diaSemana;
 
     @Column(name = "horarioAbertura")
     private LocalTime horarioAbertura;
