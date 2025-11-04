@@ -1,10 +1,11 @@
-package br.com.etechas.etecfood.Entity;
+package br.com.etechas.etecfood.entity;
 
 import jakarta.persistence.*;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Table(name = "TBL_ENTREGA")
 @Getter
 @Setter
@@ -23,6 +24,6 @@ public class Entrega {
     @Column(name = "TX_COMPLEMENTO")
     private String complemento;
     @OneToMany
-    @JoinColumn("ID_PEDIDO")
+    @JoinColumn(name = "ID_PEDIDO")
     private Pedido pedido;
 }
