@@ -67,4 +67,9 @@ insert into RestauranteFormaPagamento(id_restaurante, id_formaPagamento) values
 	(1, 3),
 	(5, 1),
 	(2, 2),
-	(3, 2);
+	(3, 2),
+	(6, 1),
+    (7, 2),
+    (8, 3),
+    (9, 1),
+    (10, 2);
