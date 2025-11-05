@@ -43,6 +43,12 @@ create table RestauranteFormaPagamento(
 	--FOREIGN KEY (id_formaPagamento) REFERENCES FormaPagamento(id_formaPagamento), 
 );
 
+create table RestauranteFormaPagamentoId(
+restaurante_id BIGINT not null,
+formaPagamento_id BIGINT not null
+
+);
+
 insert into Restaurante(id_restaurante, cnpj, nome, descricao, Cep, endereco, taxaDeEntrega, TempoDeEntregaMinimo, TempoDeEntregaMaximo, aprovado, tipoCozinha) values
 	(1, '12345678000191', 'China Express', 'Comida chinesa r�pida', '12345678', 'Rua Jos� Buono, 123', 5.99, 30, 45, 1, 'Chinesa'),
 	(2, '22345678000192', 'Sushi Place', 'Sushi e sashimi frescos', '22345678', 'Rua Tucuruvi, 456', 7.50, 40, 60, 1, 'Japonesa'),
