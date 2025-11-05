@@ -48,7 +48,12 @@ insert into Restaurante(id_restaurante, cnpj, nome, descricao, Cep, endereco, ta
 	(2, '22345678000192', 'Sushi Place', 'Sushi e sashimi frescos', '22345678', 'Rua Tucuruvi, 456', 7.50, 40, 60, 1, 'Japonesa'),
 	(3, '32345678000193', 'Taco MexMix', 'Tacos e burritos', '32345678', 'Av. do Estado, 789', 6.00, 35, 50, 0, 'Mexicana'),
 	(4, '42345678000194', 'Mineiro Sabor', 'Comida caseira mineira', '42345678', 'Rua Guilherme, 321', 4.00, 25, 40, 1, 'Mineira'),
-	(5, '52345678000195', 'Bahia Gourmet', 'Acaraj� e moqueca', '52345678', 'Av. Paulista, 654', 8.00, 45, 70, 1, 'Baiana');
+	(5, '52345678000195', 'Bahia Gourmet', 'Acaraj� e moqueca', '52345678', 'Av. Paulista, 654', 8.00, 45, 70, 1, 'Baiana'),
+	(6, '62345678000196', 'Lanches Rápidos', 'Lanches rápidos e deliciosos', '62345678', 'Rua das Flores, 111', 3.50, 20, 35, 1, 'Lanches'),
+	(7, '72345678000197', 'Bomb Burguer', 'Hambúrgueres suculentos', '72345678', 'Av. Central, 222', 4.99, 25, 40, 1, 'Hamburguer'),
+	(8, '82345678000198', 'Sabores Árabes', 'Kebabs e esfihas autênticas', '82345678', 'Rua do Oriente, 333', 6.50, 30, 50, 1, 'Arabe'),
+	(9, '92345678000199', 'Pasta Bella', 'Massas italianas artesanais', '92345678', 'Av. Roma, 444', 7.00, 35, 55, 1, 'Italiana'),
+	(10, '03345678000200', 'Variedades do Mundo', 'Culinária internacional variada', '03345678', 'Rua Global, 555', 5.50, 40, 65, 1, 'Variada');
 
 insert into HorarioFuncionamento(id_HF, diaSemana,horarioAbertura, horarioFechamento, id_restaurante) values
 	(1, 'Domingo', '10:00:00', '20:00:00', 1),
