@@ -13,6 +13,8 @@ create table Restaurante(
 	TempoDeEntregaMaximo INT not null,
 	aprovado bit not null,
 	tipoCozinha varchar(20) not null,
+	constraint Restaurante_tipoCozinha check (tipoCozinha in ('Chinesa', 'Japonesa', 'Mexicana', 
+	'Mineira', 'Baiana', 'Lanches','Hamburguer','Árabe','Italiana', 'Variada'))
 	-- usuario: Usuario foreing key aq
 );
 
