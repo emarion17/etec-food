@@ -24,7 +24,14 @@ create table HorarioFuncionamento(
 	diaSemana varchar(20),
 	horarioAbertura time,
 	horarioFechamento time,
-	id_restaurante bigint not null references Restaurante
+	id_restaurante bigint not null references Restaurante,
+	CONSTRAINT CK_HorarioFuncionamento_horarioAbertura_horarioFechamento CHECK (
+        (horarioAbertura = '10:00:00' AND horarioFechamento = '20:00:00') OR
+        (horarioAbertura = '08:00:00' AND horarioFechamento = '22:00:00') OR
+        (horarioAbertura = '11:30:00' AND horarioFechamento = '23:00:00') OR
+        (horarioAbertura = '06:00:00' AND horarioFechamento = '17:00:00') OR
+        (horarioAbertura = '06:00:00' AND horarioFechamento = '20:00:00')
+    )
 );
 
 
