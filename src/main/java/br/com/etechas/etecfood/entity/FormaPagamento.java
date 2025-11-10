@@ -21,6 +21,7 @@ public class FormaPagamento {
     @Column(name = "TX_NOME")
     private String nome;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TP_TIPO")
     private TipoFormaPagamentoEnum tipo;
 }

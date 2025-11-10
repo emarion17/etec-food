@@ -33,10 +33,11 @@ public class Pagamento {
     @Column(name = "TX_CODIGO")
     private String codigo;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TX_STATUS")
     private StatusPagamentoEnum status;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
     private FormaPagamento formaPagamento;
 
