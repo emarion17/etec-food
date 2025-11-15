@@ -1,5 +1,6 @@
 package br.com.etechas.etecfood.repository;
 
+import br.com.etechas.etecfood.entity.Cardapio;
 @Repository
 public interface CardapioRepository extends JpaRepository<Cardapio, Long> {
 }
