@@ -1,5 +1,16 @@
 package br.com.etechas.etecfood.entity
 
 import jakarta.persistence.*;
-import Lombok.Getter;
-import Lombok.Setter;
+import lombok.Getter;
+import lombok.Setter;
+
+public class Cardapio
+  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Colunm(name = "id")
+    private Long id_cardapio
+
+    @Colunm(name = "restaurante")
+    private Restaurante restaurante
+  }
