@@ -11,6 +11,7 @@ public class Cardapio
     @Colunm(name = "id")
     private Long id_cardapio
 
+    @ManyToOne
     @Colunm(name = "restaurante")
     private Restaurante restaurante
   }
