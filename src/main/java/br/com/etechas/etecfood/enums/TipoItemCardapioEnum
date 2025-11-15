@@ -1,1 +1,6 @@
-
+public enum TipoItemCardapioEnum
+{
+ENTRADA,
+PRATO_PRINCIPAL,
+BEBIDA;
+}
