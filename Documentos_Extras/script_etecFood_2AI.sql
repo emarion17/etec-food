@@ -99,22 +99,26 @@ CREATE TABLE TBL_PAGAMENTO (
 
 CREATE TABLE Cardapio (
     id_cardapio BIGINT PRIMARY KEY IDENTITY,
-    id_restaurante BIGINT NOT NULL
+    id_restaurante BIGINT NOT NULL,
+    CONSTRAINT FK_Cardapio_Restaurante 
+        FOREIGN KEY (id_restaurante) REFERENCES Restaurante(id_restaurante)
 );
 
-CREATE TABLE ITEM_CARDAPIOO (
+CREATE TABLE ITEM_CARDAPIO (
     id_item_cardapio BIGINT PRIMARY KEY IDENTITY,
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(255),
-    tipo VARCHAR(100) NOT NULL,
-    preco FLOAT not null,
-	preco_promocional FLOAT not null,
-	cardapio BIGINT not null,
-    CONSTRAINT CK_ItemCardapio_Tipo CHECK (tipo IN ('ENTRADA','PRATO_PRINCIPAL','BEBIDA'))
+    tipo VARCHAR(20) NOT NULL,
+    preco FLOAT NOT NULL,
+    preco_promocional FLOAT NOT NULL,
+    id_cardapio BIGINT NOT NULL,
+    CONSTRAINT CK_ItemCardapio_Tipo CHECK (tipo IN ('ENTRADA', 'PRATO_PRINCIPAL', 'BEBIDA'))
 );
 
-ALTER TABLE ITEM_CARDAPIOO ADD CONSTRAINT FK_ITEM_CARDAPIOO
-FOREIGN KEY (cardapio) REFERENCES CARDAPIO(id_cardapio);
+ALTER TABLE ITEM_CARDAPIO 
+ADD CONSTRAINT FK_ITEM_CARDAPIO
+FOREIGN KEY (id_cardapio) REFERENCES Cardapio(id_cardapio);
+
 --Grupo 5: Cliente, Entrega
 --Integrantes: 
 
