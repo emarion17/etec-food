@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Long> {
+
 }

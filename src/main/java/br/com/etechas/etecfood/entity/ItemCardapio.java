@@ -1,5 +1,6 @@
 package br.com.etechas.etecfood.entity;
 
+import br.com.etechas.etecfood.enums.TipoItemCardapioEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +23,7 @@ public class ItemCardapio {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo")
-    private TipoItem tipo;
+    private TipoItemCardapioEnum tipo;
 
     @Column(name = "preco")
     private Double preco;
