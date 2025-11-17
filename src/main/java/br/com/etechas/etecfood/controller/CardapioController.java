@@ -26,4 +26,14 @@ import java.util.List;
         }
         return null;
     }
+        @PostMapping 
+        public void cadastrar(@RequestBody Cardapio cardapio) {cardapioRepository.save(cardapio); }
+
+        @DeleteMapping
+        public void excluir (@PathVariable Long id){
+            var existe = cardapioRepository.findById(id);
+            if(existe.isPresent()){
+                cardapioRepository.delete(existe.get());
+            }
+        }
     }
