@@ -18,6 +18,13 @@ public class ItemCardapioController {
     public List<ItemCardapio> listar() {
         return itemCardapioRepository.findAll();
     }
+    
+    // Buscar pelo nome
+    @GetMapping("/buscar/{nome}")
+public List<Cardapio> buscarPorNome(@PathVariable String nome) {
+    return cardapioRepository.findByNomeContainingIgnoreCase(nome);
+}
+
 
     @GetMapping("/{id}")
     public ItemCardapio buscarPorId(@PathVariable Long id) {
