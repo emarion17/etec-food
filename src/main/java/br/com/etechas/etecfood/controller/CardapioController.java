@@ -44,7 +44,6 @@ public class CardapioController {
     public ResponseEntity<Cardapio> atualizar(@PathVariable Long id, @RequestBody Cardapio detalhesCardapio) {
         return cardapioRepository.findById(id)
             .map(cardapioExistente -> {
-                
                 Cardapio cardapioAtualizado = cardapioRepository.save(detalhesCardapio);
                 return ResponseEntity.ok(cardapioAtualizado);
             })

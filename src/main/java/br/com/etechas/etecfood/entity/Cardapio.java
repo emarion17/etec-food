@@ -13,9 +13,9 @@ public class Cardapio
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Colunm(name = "id")
-    private Long id_cardapio
+    private Long id_cardapio;
 
     @ManyToOne
     @Colunm(name = "restaurante")
-    private Restaurante restaurante
+    private Restaurante restaurante;
   }
