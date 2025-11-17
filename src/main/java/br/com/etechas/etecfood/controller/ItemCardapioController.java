@@ -1,39 +1,58 @@
-package br.com.etechas.etecfood.controller
+package br.com.etechas.etecfood.controller;
 
-import br.com.etechas.ingresso.entity.Filme;
-import br.com.etechas.ingresso.repository.FilmeRepository;
+import br.com.etechas.etecfood.entity.ItemCardapio;
+import br.com.etechas.etecfood.repository.ItemCardapioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/itemCardapios")
+public class ItemCardapioController {
 
-    public class ItemCardapioController {
+    @Autowired
+    private ItemCardapioRepository itemCardapioRepository;
 
-        @Autowired
-        private ItemCardapioRepository itemCardapioRepository;
+    @GetMapping
+    public List<ItemCardapio> listar() {
+        return itemCardapioRepository.findAll();
+    }
 
-        @GetMapping
-        public List <ItemCardapio> listar() {return itemCardapioRepository.findAll();}
+    @GetMapping("/{id}")
+    public ItemCardapio buscarPorId(@PathVariable Long id) {
+        Optional<ItemCardapio> itemCardapio = itemCardapioRepository.findById(id);
+        return itemCardapio.orElse(null);
+    }
 
-         @GetMapping("/{Id}")
-        public ItemCardapio BuscarPorId(@PathVariable Long Id){
-        var itemCardapio = itemCardapioRepository.findById(Id);
-        if(itemCardapio.isPresent()){
-            return itemCardapio.get();
+    @PostMapping
+    public ItemCardapio cadastrar(@RequestBody ItemCardapio itemCardapio) {
+        return itemCardapioRepository.save(itemCardapio);
+    }
+
+    @PutMapping("/{id}")
+    public ItemCardapio atualizar(@PathVariable Long id, @RequestBody ItemCardapio dadosAtualizados) {
+        Optional<ItemCardapio> existente = itemCardapioRepository.findById(id);
+
+        if (existente.isPresent()) {
+            ItemCardapio itemCardapio = existente.get();
+
+            // Para atualizar os campos da entidade
+            itemCardapio.setNome(dadosAtualizados.getNome());
+            itemCardapio.setDescricao(dadosAtualizados.getDescricao());
+            itemCardapio.setPreco(dadosAtualizados.getPreco());
+            itemCardapio.setCategoria(dadosAtualizados.getCategoria());
+
+            return itemCardapioRepository.save(itemCardapio);
         }
+
         return null;
     }
-        @PostMapping 
-        public void cadastrar(@RequestBody ItemCardapio itemCardapio) {itemCardapioRepository.save(itemCardapio); }
 
-        @DeleteMapping
-        public void excluir (@PathVariable Long id){
-            var existe = itemCardapioRepository.findById(id);
-            if(existe.isPresent()){
-                itemCardapioRepository.delete(existe.get());
-            }
-        }
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable Long id) {
+        Optional<ItemCardapio> existe = itemCardapioRepository.findById(id);
+        existe.ifPresent(itemCardapioRepository::delete);
     }
+}
