@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.entity
+package br.com.etechas.etecfood.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -12,10 +12,10 @@ public class Cardapio
   {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Colunm(name = "id")
-    private Long id_cardapio;
+    @Column(name = "id_cardapio")
+    private Long id;
 
     @ManyToOne
-    @Colunm(name = "restaurante")
+    @Column(name = "id_restaurante")
     private Restaurante restaurante;
   }
