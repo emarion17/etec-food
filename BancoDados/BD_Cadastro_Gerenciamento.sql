@@ -13,9 +13,10 @@ create table Restaurante(
 	TempoDeEntregaMaximo INT not null,
 	aprovado bit not null,
 	tipoCozinha varchar(20) not null,
+	usuario_id BIGINT NOT NULL,
+	FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario),
 	constraint Restaurante_tipoCozinha check (tipoCozinha in ('Chinesa', 'Japonesa', 'Mexicana', 
 	'Mineira', 'Baiana', 'Lanches','Hamburguer','Árabe','Italiana', 'Variada'))
-	-- usuario: Usuario foreing key aq
 );
 
 
@@ -37,10 +38,10 @@ create table HorarioFuncionamento(
 
 create table RestauranteFormaPagamento(
 	id_restaurante bigint not null,
-	--id_formaPagamento int(ou qual seja a que eles colocarem) aqui é para estar quando tivermos que relacionar a outra tabela.
+	id_formaPagamento BIGINT NOT NULL,
 	primary key (id_restaurante, id_formaPagamento),
 	FOREIGN KEY (id_restaurante) REFERENCES Restaurante(id_restaurante), 
-	--FOREIGN KEY (id_formaPagamento) REFERENCES FormaPagamento(id_formaPagamento), 
+	FOREIGN KEY (id_formaPagamento) REFERENCES TBL_FORMA_PAGAMENTO(ID_FORMA_PAGAMENTO)
 );
 
 
