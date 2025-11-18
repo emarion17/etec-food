@@ -21,8 +21,8 @@ public class ItemCardapioController {
     
     // Buscar pelo nome
     @GetMapping("/buscar/{nome}")
-public List<Cardapio> buscarPorNome(@PathVariable String nome) {
-    return cardapioRepository.findByNomeContainingIgnoreCase(nome);
+public List<ItemCardapio> buscarPorNome(@PathVariable String nome) {
+    return itemCardapioRepository.findByNomeContainingIgnoreCase(nome);
 }
 
 
