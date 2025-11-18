@@ -34,7 +34,7 @@ public class PagamentoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Pagamento> deletar(@PathVariable Long id){
-        if (pagamentpRepository.existsById(id)){
+        if (pagamentoRepository.existsById(id)){
             pagamentoRepository.deleteById(id);
             return ResponseEntity.noContent().build();
         }
