@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.etechas.etecfood.Entity.Pagamento;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pagamentos")
 
@@ -18,5 +20,16 @@ public class PagamentoController {
 
     @GetMapping
     public List<Pagamento> listar() { return pagamentoRepository.findAll() }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Pagamento> buscaPorId(@PathVariable Long id){
+        var pagamento = pagamentoRepository.findById(id);
+
+        if (filme.isPresent()) {
+            return ResponseEntity.ok(pagamento.get());
+        }
+
+        return ReponseEntity.notFound().build();
+    }
 
 }
