@@ -23,4 +23,13 @@ public class FormaPagamentoController {
         Optional<FormaPagamento> formaPagamento = this.formaPagamentoRepository.findById(id);
         return formaPagamento.isPresent() ? ResponseEntity.ok((FormaPagamento)formaPagamento.get()) : ResponseEntity.notFound().build();
     }
+
+    @PostMapping
+    public void cadastrar(@RequestBody FormaPagamento formaPagamento) { this.formaPagamentoRepository.save(formaPagamento); }
+    @DeleteMapping({"/{id"})
+    public void deletar(@PathVariable Long id) {
+        if (this.formaPagamentoRepository.existsById(id)) {
+            this.formaPagamentoRepository.deleteById(id);
+        }
+    }
 }
