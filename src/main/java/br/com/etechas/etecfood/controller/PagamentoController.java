@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.contoller;
+package br.com.etechas.etecfood.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
