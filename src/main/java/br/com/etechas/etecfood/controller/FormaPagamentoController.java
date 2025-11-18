@@ -12,4 +12,9 @@ import java.util.Optional;
 public class FormaPagamentoController {
     @Autowired
     private FormaPagamentoRepository formaPagamentoRepository;
+
+    @GetMapping
+    public List<FormaPagamento> listar(){
+        return this.formaPagamentoRepository.findAll();
+    }
 }
