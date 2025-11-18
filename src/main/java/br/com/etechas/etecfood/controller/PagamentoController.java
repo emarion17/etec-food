@@ -1,5 +1,6 @@
 package br.com.etechas.etecfood.controller;
 
+import br.com.etechas.etecfood.repository.PagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
