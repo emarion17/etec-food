@@ -17,7 +17,7 @@ create table TBL_VEICULO (
 	FOREIGN KEY (ID_ENTREGADOR) REFERENCES TBL_ENTREGADOR(ID_ENTREGADOR)
 );
 
-insert into TBL_ENTREGADOR() values
+insert into TBL_ENTREGADOR values
 
 (1, 'Alexandro Rocha', '11988921239'),
 (2, 'Matheus Guerino', '11312988232'),
