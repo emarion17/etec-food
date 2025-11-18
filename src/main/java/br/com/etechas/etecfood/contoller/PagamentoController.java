@@ -13,7 +13,7 @@ import java.util.List;
 public class PagamentoController {
 
     @Autowired
-    private PagamentoRepository filmeRepository;
+    private PagamentoRepository pagamentoRepository;
 
     @GetMapping
     public List<Pagamento> listar() { return pagamentoRepository.findAll(); }
@@ -22,14 +22,25 @@ public class PagamentoController {
     public ResponseEntity<Pagamento> buscaPorId(@PathVariable Long id){
         var pagamento = pagamentoRepository.findById(id);
 
-        if (filme.isPresent()) {
+        if (pagamento.isPresent()) {
             return ResponseEntity.ok(pagamento.get());
         }
 
-        return ReponseEntity.notFound().build();
+        return ResponseEntity.notFound().build();
     }
 
     @PostMapping
-    public void cadastrar(@RequestMapping Pagamento pagamento) { pagamentoRepository.save(filme); }
+    public void cadastrar(@RequestBody Pagamento pagamento) { pagamentoRepository.save(pagamento); }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Pagamento> deletar(@PathVariable Long id){
+        if (pagamentpRepository.existsById(id)){
+            pagamentoRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.notFound().build();
+
+    }
 
 }
