@@ -31,4 +31,12 @@ public class RestauranteController {
 
     @PostMapping
     public void cadastrarRestaurante(@RequestBody Restaurante restaurante){restauranteRepository.save(restaurante);}
+
+    @DeleteMapping("/{id}")
+    public void deletarRestaurante(@PathVariable Long id){
+        var restaurante = restauranteRepository.findById(id);
+        if(restaurante.isPresent()){
+            restauranteRepository.delete(restaurante.get());
+        }
+    }
 }
