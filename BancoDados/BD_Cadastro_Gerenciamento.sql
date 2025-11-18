@@ -13,6 +13,8 @@ create table Restaurante(
 	TempoDeEntregaMaximo INT not null,
 	aprovado bit not null,
 	tipoCozinha varchar(20) not null,
+	constraint Restaurante_tipoCozinha check (tipoCozinha in ('Chinesa', 'Japonesa', 'Mexicana', 
+	'Mineira', 'Baiana', 'Lanches','Hamburguer','Árabe','Italiana', 'Variada'))
 	-- usuario: Usuario foreing key aq
 );
 
@@ -22,7 +24,14 @@ create table HorarioFuncionamento(
 	diaSemana varchar(20),
 	horarioAbertura time,
 	horarioFechamento time,
-	id_restaurante bigint not null references Restaurante
+	id_restaurante bigint not null references Restaurante,
+	CONSTRAINT CK_HorarioFuncionamento_horarioAbertura_horarioFechamento CHECK (
+        (horarioAbertura = '10:00:00' AND horarioFechamento = '20:00:00') OR
+        (horarioAbertura = '08:00:00' AND horarioFechamento = '22:00:00') OR
+        (horarioAbertura = '11:30:00' AND horarioFechamento = '23:00:00') OR
+        (horarioAbertura = '06:00:00' AND horarioFechamento = '17:00:00') OR
+        (horarioAbertura = '06:00:00' AND horarioFechamento = '20:00:00')
+    )
 );
 
 
@@ -34,12 +43,23 @@ create table RestauranteFormaPagamento(
 	--FOREIGN KEY (id_formaPagamento) REFERENCES FormaPagamento(id_formaPagamento), 
 );
 
+create table RestauranteFormaPagamentoId(
+restaurante_id BIGINT not null,
+formaPagamento_id BIGINT not null
+
+);
+
 insert into Restaurante(id_restaurante, cnpj, nome, descricao, Cep, endereco, taxaDeEntrega, TempoDeEntregaMinimo, TempoDeEntregaMaximo, aprovado, tipoCozinha) values
 	(1, '12345678000191', 'China Express', 'Comida chinesa r�pida', '12345678', 'Rua Jos� Buono, 123', 5.99, 30, 45, 1, 'Chinesa'),
 	(2, '22345678000192', 'Sushi Place', 'Sushi e sashimi frescos', '22345678', 'Rua Tucuruvi, 456', 7.50, 40, 60, 1, 'Japonesa'),
 	(3, '32345678000193', 'Taco MexMix', 'Tacos e burritos', '32345678', 'Av. do Estado, 789', 6.00, 35, 50, 0, 'Mexicana'),
 	(4, '42345678000194', 'Mineiro Sabor', 'Comida caseira mineira', '42345678', 'Rua Guilherme, 321', 4.00, 25, 40, 1, 'Mineira'),
-	(5, '52345678000195', 'Bahia Gourmet', 'Acaraj� e moqueca', '52345678', 'Av. Paulista, 654', 8.00, 45, 70, 1, 'Baiana');
+	(5, '52345678000195', 'Bahia Gourmet', 'Acaraj� e moqueca', '52345678', 'Av. Paulista, 654', 8.00, 45, 70, 1, 'Baiana'),
+	(6, '62345678000196', 'Lanches Rápidos', 'Lanches rápidos e deliciosos', '62345678', 'Rua das Flores, 111', 3.50, 20, 35, 1, 'Lanches'),
+	(7, '72345678000197', 'Bomb Burguer', 'Hambúrgueres suculentos', '72345678', 'Av. Central, 222', 4.99, 25, 40, 1, 'Hamburguer'),
+	(8, '82345678000198', 'Sabores Árabes', 'Kebabs e esfihas autênticas', '82345678', 'Rua do Oriente, 333', 6.50, 30, 50, 1, 'Arabe'),
+	(9, '92345678000199', 'Pasta Bella', 'Massas italianas artesanais', '92345678', 'Av. Roma, 444', 7.00, 35, 55, 1, 'Italiana'),
+	(10, '03345678000200', 'Variedades do Mundo', 'Culinária internacional variada', '03345678', 'Rua Global, 555', 5.50, 40, 65, 1, 'Variada');
 
 insert into HorarioFuncionamento(id_HF, diaSemana,horarioAbertura, horarioFechamento, id_restaurante) values
 	(1, 'Domingo', '10:00:00', '20:00:00', 1),
@@ -53,4 +73,9 @@ insert into RestauranteFormaPagamento(id_restaurante, id_formaPagamento) values
 	(1, 3),
 	(5, 1),
 	(2, 2),
-	(3, 2);
+	(3, 2),
+	(6, 1),
+    (7, 2),
+    (8, 3),
+    (9, 1),
+    (10, 2);
