@@ -27,7 +27,4 @@ public class Veiculo {
     @JoinColumn(name = "ID_ENTREGADOR")
     private Entregador entregador;
 
-
-
-
 }

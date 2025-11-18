@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.Entity;
+package br.com.etechas.etecfood.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
