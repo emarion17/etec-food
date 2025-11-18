@@ -37,5 +37,13 @@ public class HorarioFuncionamentoController {
         horarioFuncionamentoRepository.save(horario);
     }
 
-}
 
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        var horario = horarioFuncionamentoRepository.findById(id);
+        if (horario.isPresent()) {
+            horarioFuncionamentoRepository.delete(horario.get());
+        }
+    }
+
+}
