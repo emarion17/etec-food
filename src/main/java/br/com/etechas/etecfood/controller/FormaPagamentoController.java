@@ -17,4 +17,10 @@ public class FormaPagamentoController {
     public List<FormaPagamento> listar(){
         return this.formaPagamentoRepository.findAll();
     }
+
+    @GetMapping({"/{id"})
+    public ResponseEntity<FormaPagamento> buscarporId(@PathVariable Long id) {
+        Optional<FormaPagamento> formaPagamento = this.formaPagamentoRepository.findById(id);
+        return formaPagamento.isPresent() ? ResponseEntity.ok((FormaPagamento)formaPagamento.get()) : ResponseEntity.notFound().build();
+    }
 }
