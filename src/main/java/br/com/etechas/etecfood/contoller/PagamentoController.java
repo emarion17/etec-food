@@ -2,10 +2,7 @@ package br.com.etechas.etecfood.contoller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import br.com.etechas.etecfood.Entity.Pagamento;
 
 import java.util.List;
@@ -19,7 +16,7 @@ public class PagamentoController {
     private PagamentoRepository filmeRepository;
 
     @GetMapping
-    public List<Pagamento> listar() { return pagamentoRepository.findAll() }
+    public List<Pagamento> listar() { return pagamentoRepository.findAll(); }
 
     @GetMapping("/{id}")
     public ResponseEntity<Pagamento> buscaPorId(@PathVariable Long id){
@@ -31,5 +28,8 @@ public class PagamentoController {
 
         return ReponseEntity.notFound().build();
     }
+
+    @PostMapping
+    public void cadastrar(@RequestMapping Pagamento pagamento) { pagamentoRepository.save(filme); }
 
 }
