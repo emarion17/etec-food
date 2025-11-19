@@ -5,4 +5,12 @@ public enum TipoVeiculoEnum {
     CARRO,
     BICICLETA,
     OUTRO
+
+    private String descricao;
+    TipoVeiculoEnum(String descricao){
+        this.descricao = descricao;
+    }
+    public String getDescricao(){
+        return descricao;
+    }
 }
