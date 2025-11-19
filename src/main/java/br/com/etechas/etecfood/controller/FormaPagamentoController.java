@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RequestController
+@RestController
 @RequestMapping({"/formaPagamento"})
 
 public class FormaPagamentoController {
@@ -26,6 +26,7 @@ public class FormaPagamentoController {
 
     @PostMapping
     public void cadastrar(@RequestBody FormaPagamento formaPagamento) { this.formaPagamentoRepository.save(formaPagamento); }
+
     @DeleteMapping({"/{id"})
     public void deletar(@PathVariable Long id) {
         if (this.formaPagamentoRepository.existsById(id)) {
