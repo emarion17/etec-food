@@ -29,5 +29,19 @@ import lombok.Setter;
             return entregadorRepository.count();
         }
 
+        @PutMapping("/{id}")
+        public ResponseEntity<Entregador> atualizar(
+                @PathVariable Long id,
+                @RequestBody Entregador novo
+        ){
+            return entregadorRepository.findById(id)
+                    .map(e -> {
+                        e.setNome(novo.getNome());
+                        e.setTelefone(novo.getTelefone());
+                        e.setAtivo(novo.getAtivo());
+                        return ResponseEntity.ok(entregadorRepository.save(e));
+                    })
+                    .orElse(ResponseEntity.notFound().build());
+        }
 
     }
