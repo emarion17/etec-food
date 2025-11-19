@@ -40,5 +40,10 @@ public class EntregadorController {
             ResponseEntity.notFound().build();
         }
     }
+    @PostMapping
+    public void cadastrar(@RequestBody Entregador entregador){
+        entregadorRepository.save(entregador);
+    }
 
 }
+
