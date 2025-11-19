@@ -32,6 +32,22 @@ public class Veiculo {
         return veiculoRepository.count();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Veiculo> atualizar(
+            @PathVariable Long id,
+            @RequestBody Veiculo novo
+    ){
+        return veiculoRepository.findById(id)
+                .map(v -> {
+                    v.setModelo(novo.getModelo());
+                    v.setPlaca(novo.getPlaca());
+                    v.setTipo(novo.getTipo());
+                    v.setAtivo(novo.getAtivo());
+                    return ResponseEntity.ok(veiculoRepository.save(v));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 
 
 
