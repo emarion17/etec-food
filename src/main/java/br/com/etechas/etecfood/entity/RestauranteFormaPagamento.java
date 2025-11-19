@@ -1,5 +1,4 @@
-package br.com.etechas.etecfood.Entity;
-
+package br.com.etechas.etecfood.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,8 +8,9 @@ import lombok.Setter;
 @Entity
 @Table(name = "RestauranteFormaPagamento")
 public class RestauranteFormaPagamento {
-    @EmbeddedId
-    private RestauranteFormaPagamentoId  id;
+
+    @JoinColumn(name = "id_formaPagamento")
+    private RestauranteFormaPagamentoId id;
 
     @ManyToOne
     @JoinColumn(name = "id_restaurante")

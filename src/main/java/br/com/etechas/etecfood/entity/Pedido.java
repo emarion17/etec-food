@@ -17,7 +17,6 @@ public class Pedido {
 
     @Id // -> Chave Primária (PK)
     @Column(name = "ID_PEDIDO")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "DT_CRIACAO")
