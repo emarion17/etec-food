@@ -6,7 +6,7 @@ Verbo HTTPS         ENDPOINT                   JSON
 GET       localhost:8080/horarios           Não é necessário
 
 
-POST
+POST      localhost:8080/restaurantes
 
 
 POST      Localhost:8080/restaurantes      { "cnpj": "1234566788",
