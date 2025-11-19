@@ -12,3 +12,7 @@ POST      Localhost:8080/restaurantes      { "cnpj": "1234566788"
                                              "tempoDeEntregaMaximo": 01:00
                                              "aprovado": "TRUE"
                                              "tipoDeCozinha": Chinesa}
+
+
+
+DELETE      Localhost:8080/restaurantes      É necessário
