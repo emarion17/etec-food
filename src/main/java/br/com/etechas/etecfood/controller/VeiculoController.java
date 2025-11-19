@@ -4,10 +4,7 @@ import br.com.etechas.etecfood.entity.Veiculo;
 import br.com.etechas.etecfood.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,16 @@ public class VeiculoController {
         }
         else{
             return ResponseEntity.notFound().build();
+        }
+    }
+    @DeleteMapping("/{id}")
+    public void deletarPorId(@PathVariable Long id){
+        var veiculo = veiculoRepository.findById(id);
+        if(veiculo.isPresent()) {
+            veiculoRepository.delete(veiculo.get());
+        }
+        else{
+            ResponseEntity.notFound().build();
         }
     }
 
