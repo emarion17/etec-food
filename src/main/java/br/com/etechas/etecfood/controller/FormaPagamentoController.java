@@ -1,5 +1,6 @@
 package br.com.etechas.etecfood.controller;
 
+import br.com.etechas.etecfood.entity.FormaPagamento;
 import br.com.etechas.etecfood.repository.FormaPagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
