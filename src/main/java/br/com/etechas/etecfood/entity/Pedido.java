@@ -23,6 +23,7 @@ public class Pedido {
     @Column(name = "DT_CRIACAO")
     private LocalDateTime dataCriacao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TP_STATUS")
     private StatusPedidoEnum status;
 
