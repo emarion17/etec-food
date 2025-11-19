@@ -1,5 +1,8 @@
 "# etec-food" 
 
+Verbo HTTPS         ENDPOINT                   JSON
+
+
 GET       localhost:8080/horarios           Não é necessário
 
 
