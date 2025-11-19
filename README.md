@@ -1,5 +1,7 @@
 "# etec-food" 
 
+GET       localhost:8080/horarios           Não é necessário
+
 
 
 POST      Localhost:8080/restaurantes      { "cnpj": "1234566788"
