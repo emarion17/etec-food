@@ -23,4 +23,11 @@ import lombok.Setter;
 
         @Column(name ="ATIVO")
         private Boolean ativo;
-}
+
+        @GetMapping("/quantidade")
+        public long quantidade() {
+            return entregadorRepository.count();
+        }
+
+
+    }
