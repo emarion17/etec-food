@@ -39,4 +39,10 @@ public class VeiculoController {
         }
     }
 
+    @PostMapping
+    public void cadastrar(@RequestBody Veiculo veiculo){
+        veiculoRepository.save(veiculo);
+    }
+
+
 }
