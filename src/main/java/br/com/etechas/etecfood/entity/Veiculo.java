@@ -27,6 +27,11 @@ public class Veiculo {
     @JoinColumn(name = "ID_ENTREGADOR")
     private Entregador entregador;
 
+    @GetMapping("/count")
+    public Long contarVeiculos() {
+        return veiculoRepository.count();
+    }
+
 
 
 
