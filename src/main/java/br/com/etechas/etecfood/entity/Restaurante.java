@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.Entity;
+package br.com.etechas.etecfood.entity;
 import br.com.etechas.etecfood.enums.TipoCozinhaEnum;
 import jakarta.persistence.*;
 import lombok.Getter;

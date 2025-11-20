@@ -1,8 +1,8 @@
 package br.com.etechas.etecfood.Entity;
 
 import br.com.etechas.etecfood.Enum.StatusPagamentoEnum;
-import br.com.etechas.etecfood.Entity.FormaPagamento;
-import br.com.etechas.etecfood.Enum.TipoFormaPagamentoEnum;
+import br.com.etechas.etecfood.entity.FormaPagamento;
+import br.com.etechas.etecfood.enums.TipoFormaPagamentoEnum;
 import br.com.etechas.etecfood.entity.Pedido;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -42,9 +42,5 @@ public class Pagamento {
     @ManyToOne
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
     private FormaPagamento formaPagamento;
-
-    @OneToOne
-    @JoinColumn(name = "ID_PEDIDO")
-    private Pedido pedido;
 
 }

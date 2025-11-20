@@ -1,6 +1,6 @@
 package br.com.etechas.etecfood.entity;
 
-import br.com.etechas.etecfood.Enum.TipoFormaPagamentoEnum;
+import br.com.etechas.etecfood.enums.TipoFormaPagamentoEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
