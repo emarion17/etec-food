@@ -18,7 +18,7 @@ public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_PAGAMENTO")
-    private Long id;
+    private Long Id;
 
     @Column(name = "NR_VALOR")
     private Double valor;
@@ -43,4 +43,7 @@ public class Pagamento {
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
     private FormaPagamento formaPagamento;
 
+    @OneToOne
+    @JoinColumn(name = "ID_PEDIDO")
+    private Long id;
 }
