@@ -14,7 +14,7 @@ create table TBL_Usuario(
 
 create table TBL_Permissao(
     id_permissao bigint primary key identity,
-	authority varchar(50)
+	authority varchar(50) not null
 );
 
 create table TBL_Usuario_Permissao(
