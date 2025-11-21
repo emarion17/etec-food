@@ -5,7 +5,6 @@ import br.com.etechas.etecfood.repository.ItemPedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -14,4 +13,9 @@ import java.util.Optional;
 public class ItemPedidoController {
      @Autowired
      private ItemPedidoRepository itemPedidoRepository;
+
+     @GetMapping
+     public List<ItemPedido> listarItens(){
+          return itemPedidoRepository.findAll();
+     }
 }
