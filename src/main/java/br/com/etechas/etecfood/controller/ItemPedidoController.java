@@ -2,7 +2,6 @@ package br.com.etechas.etecfood.controller;
 
 import br.com.etechas.etecfood.entity.ItemPedido;
 import br.com.etechas.etecfood.repository.ItemPedidoRepository;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +31,12 @@ public class ItemPedidoController {
      @PostMapping
      public void cadastrarItem(@RequestBody ItemPedido itemPedido){
           itemPedidoRepository.save(itemPedido);
+     }
+
+     @DeleteMapping("/{id}")
+     public void deletarItemPorId(@PathVariable Long id){
+          var itemPedido = itemPedidoRepository.findById(id);
+          if(itemPedido.isPresent())
+               itemPedidoRepository.delete(itemPedido.get());
      }
 }
