@@ -1,0 +1,17 @@
+package br.com.etechas.etecfood.controller;
+
+import br.com.etechas.etecfood.entity.ItemPedido;
+import br.com.etechas.etecfood.repository.ItemPedidoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RequestMapping("/itenspedido")
+@RestController
+public class ItemPedidoController {
+     @Autowired
+     private ItemPedidoRepository itemPedidoRepository;
+}
