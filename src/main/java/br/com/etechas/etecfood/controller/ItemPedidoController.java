@@ -2,6 +2,7 @@ package br.com.etechas.etecfood.controller;
 
 import br.com.etechas.etecfood.entity.ItemPedido;
 import br.com.etechas.etecfood.repository.ItemPedidoRepository;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +27,10 @@ public class ItemPedidoController {
                return ResponseEntity.ok(itemPedido.get());
           else
                return ResponseEntity.notFound().build();
+     }
+
+     @PostMapping
+     public void cadastrarItem(@RequestBody ItemPedido itemPedido){
+          itemPedidoRepository.save(itemPedido);
      }
 }
