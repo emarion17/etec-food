@@ -18,4 +18,13 @@ public class ItemPedidoController {
      public List<ItemPedido> listarItens(){
           return itemPedidoRepository.findAll();
      }
+
+     @GetMapping("/{id}")
+     public ResponseEntity<ItemPedido> buscarItemPorId(@PathVariable Long id){
+          var itemPedido = itemPedidoRepository.findById(id);
+          if (itemPedido.isPresent())
+               return ResponseEntity.ok(itemPedido.get());
+          else
+               return ResponseEntity.notFound().build();
+     }
 }
