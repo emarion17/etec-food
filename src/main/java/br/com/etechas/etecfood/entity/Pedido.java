@@ -1,6 +1,7 @@
 package br.com.etechas.etecfood.entity;
 
 import br.com.etechas.etecfood.enums.StatusPedidoEnum;
+import br.com.etechas.etecfood.entity.Restaurante;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,7 @@ public class Pedido {
     private LocalDateTime dataCriacao;
 
     @Column(name = "TP_STATUS")
+    @Enumerated(EnumType.STRING)
     private StatusPedidoEnum status;
 
     @Column(name = "ID_RESTAURANTE")
