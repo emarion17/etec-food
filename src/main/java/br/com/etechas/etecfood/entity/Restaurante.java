@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.Entity;
+package br.com.etechas.etecfood.entity;
 import br.com.etechas.etecfood.enums.TipoCozinhaEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,6 +10,7 @@ import lombok.Setter;
 @Table(name = "Restaurante")
 public class Restaurante {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_restaurante")
     private Long id;
 

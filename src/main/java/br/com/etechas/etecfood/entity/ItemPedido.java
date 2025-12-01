@@ -13,7 +13,6 @@ public class ItemPedido {
 
     @Id
     @Column(name = "ID_ITEM_PEDIDO")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "NR_QUANTIDADE")
