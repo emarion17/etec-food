@@ -45,5 +45,5 @@ public class Pagamento {
 
     @OneToOne
     @JoinColumn(name = "ID_PEDIDO")
-    private Long id;
+    private Pedido pedido;
 }
