@@ -138,7 +138,7 @@ CREATE TABLE TBL_ENTREGA (
 	TX_ENDERECO varchar(100) not null,
 	TX_COMPLEMENTO varchar(100),
 	ID_CPF varchar(11) not null,
-	foreign key (ID_CPF) references TBL_CLIENTE(ID_CPF)
+	foreign key (ID_CPF) references TBL_CLIENTE(ID_CLIENTE)
 
 );
 

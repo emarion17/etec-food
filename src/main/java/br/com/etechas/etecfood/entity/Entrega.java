@@ -5,6 +5,8 @@ import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "TBL_ENTREGA")
 @Getter
@@ -24,6 +26,6 @@ public class Entrega {
     @Column(name = "TX_COMPLEMENTO")
     private String complemento;
     @OneToMany
-    @JoinColumn(name = "ID_PEDIDO")
-    private Pedido pedido;
+    @JoinColumn(name = "ID_CPF")
+    private List<Cliente> clientes;
 }
