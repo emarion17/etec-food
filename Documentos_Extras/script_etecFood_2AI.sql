@@ -27,7 +27,7 @@ CREATE TABLE Usuario_Permissao (
     usuario_id BIGINT NOT NULL,
     permissao_id BIGINT NOT NULL,
     PRIMARY KEY (usuario_id, permissao_id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario),
+    FOREIGN KEY (usuario_id) REFERENCES TBL_Usuario(id_usuario),
     FOREIGN KEY (permissao_id) REFERENCES Permissao(id)
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE Restaurante (
     aprovado BIT DEFAULT 0 not null,
     tipoDeCozinha VARCHAR(20) NOT NULL,
     usuario_id BIGINT NOT NULL,
-	FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario),
+	FOREIGN KEY (usuario_id) REFERENCES TBL_Usuario(id_usuario),
     CONSTRAINT CK_Restaurante_TipoCozinha CHECK (
         tipoDeCozinha IN ('CHINESA','JAPONESA','MEXICANA','MINEIRA','BAIANA',
                           'LANCHES','HAMBURGER','ARABE','ITALIANA','VARIADA')

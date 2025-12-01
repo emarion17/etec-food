@@ -13,6 +13,5 @@ import lombok.Setter;
 public class ItemCardapio {
     @Id
     @Column(name = "ID_ITEM_CARDAPIO")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 }
