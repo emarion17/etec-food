@@ -120,20 +120,21 @@ ADD CONSTRAINT FK_ITEM_CARDAPIO
 FOREIGN KEY (id_cardapio) REFERENCES Cardapio(id_cardapio);
 
 --Grupo 5: Cliente, Entrega
---Integrantes: 
+--Integrantes: Enzo de Holanda, Enzo Catarino, Gabriel Basilio, João Silva, Victor Porfirio
 
 CREATE TABLE TBL_CLIENTE (
-  ID_CPF varchar(11) primary key not null,
+    ID_CLIENTE bigint primary key identity,
+    TX_CPF varchar(11) unique not null,
 	TX_NOME varchar(100) not null,
-	TX_EMAIL varchar(100),
-	TX_TELEFONE varchar(11),
+	TX_EMAIL varchar(100) unique,
+	TX_TELEFONE varchar(11) unique,
 	IN_VALIDADO bit
 );
 
 
 CREATE TABLE TBL_ENTREGA (
     ID_ENTREGA bigint primary key identity,
-	TX_CEP varchar(100),
+	TX_CEP varchar(8),
 	TX_ENDERECO varchar(100) not null,
 	TX_COMPLEMENTO varchar(100),
 	ID_CPF varchar(11) not null,
