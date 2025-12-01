@@ -1,7 +1,9 @@
 package br.com.etechas.etecfood.Entity;
 
 import br.com.etechas.etecfood.Enum.StatusPagamentoEnum;
-import br.com.etechas.etecfood.Enum.TipoFormaPagamentoEnum;
+import br.com.etechas.etecfood.entity.FormaPagamento;
+import br.com.etechas.etecfood.enums.TipoFormaPagamentoEnum;
+import br.com.etechas.etecfood.entity.Pedido;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +18,7 @@ public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_PAGAMENTO")
-    private Long id;
+    private Long Id;
 
     @Column(name = "NR_VALOR")
     private Double valor;
@@ -33,15 +35,15 @@ public class Pagamento {
     @Column(name = "TX_CODIGO")
     private String codigo;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "TX_STATUS")
     private StatusPagamentoEnum status;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_FORMA_PAGAMENTO")
     private FormaPagamento formaPagamento;
 
     @OneToOne
     @JoinColumn(name = "ID_PEDIDO")
-    private Pedido pedido;
-
+    private Long id;
 }

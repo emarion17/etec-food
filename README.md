@@ -1,35 +1,54 @@
-"# etec-food" 
-
-Verbo HTTPS         ENDPOINT                   JSON
-
-
-GET       localhost:8080/horarios           Não é necessário
-
-
-POST      localhost:8080/restaurantes      { "cnpj": "8546342609",
-                                             "nome": "Restaurante Japonês",
-                                             "descricao": "Estabelecimento de comida japonesa",
-                                             "cep": "05570-002",
-                                             "endereco": "Avenida do Estado n° 105",
-                                             "TaxaEntrega": 5.00,
-                                             "tempoDeEntregaMinimo": 40,
-                                             "tempoDeEntregaMaximo": 60,
-                                             "aprovado": true,
-                                             "tipoDeCozinha": Japonesa }
-                                             
-
-
-POST      Localhost:8080/restaurantes      { "cnpj": "1234566788",
-                                             "nome": "Restaurante Chinês",
-                                             "descricao": "Estabelecimento de comida chinesa",
-                                             "cep": "02260-001",
-                                             "endereco": "Avenida Central nº 45",
-                                             "TaxaEntrega": 10.00,
-                                             "tempoDeEntregaMinimo": 20,
-                                             "tempoDeEntregaMaximo": 60,
-                                             "aprovado": true,
-                                             "tipoDeCozinha": Chinesa }
+"# etec-food"
 
 
 
-DELETE      Localhost:8080/restaurantes      É necessário
+get 	localhost:8080/pagamentos 	não é necessário
+
+&nbsp;				 
+
+post 	localhost:8080/pagamentos	"nr\_valor": 12.05
+
+&nbsp;					"tx\_nome": 'Júlia Leite'
+
+&nbsp;					"nr\_numero": 5
+
+&nbsp;				 	"tx\_expiracao": '19-10-2019'
+
+&nbsp;				 	"tx\_codigo": '5224 4517 8002 5748'
+
+&nbsp;				 	"tx\_status": 'CANCELADO'
+
+
+
+put 	localhost:8080/pagamentos/6 	"nr\_valor": 12.05
+
+ 					"tx\_nome": 'Júlia Leite'
+
+ 					"nr\_numero": 5
+
+ 				 	"tx\_expiracao": '19-10-2019'
+
+ 				 	"tx\_codigo": '5224 4517 8002 5748'
+
+ 				 	"tx\_status": 'CONFIRMADO'
+
+
+
+
+
+delete 	localhost:8080/pagamentos/6 	não é necessário
+
+
+
+
+
+
+
+&nbsp;
+
+
+
+
+
+
+
