@@ -1,17 +1,35 @@
 "# etec-food" 
-| Verbo HTTP | Endpoint                            | Json (quando necessário)                                       |
-|------------|--------------------------------------|----------------------------------------------------------------|
-| GET        | http://localhost:8080/usuarios       | Não é necessário                                               |
-| GET        | http://localhost:8080/usuarios/{id}  | Não é necessário                                               |
-| POST       | http://localhost:8080/usuarios       | { "nome": "...", "senha": "...", "tentativasAcesso": 0,       |
-|            |                                      |   "dataBloqueio": "2025-01-01T12:00:00",                       |
-|            |                                      |   "dataInativacao": "2025-01-01T12:00:00",                     |
-|            |                                      |   "status": "ATIVO",                                           |
-|            |                                      |   "permissaoList": [ { "id": 1 } ] }                           |
-| DELETE     | http://localhost:8080/usuarios/{id}  | Não é necessário                                               |
-|------------|--------------------------------------|----------------------------------------------------------------|
-| GET        | http://localhost:8080/permissoes     | Não é necessário                                               |
-| GET        | http://localhost:8080/permissoes/{id}| Não é necessário                                               |
-| POST       | http://localhost:8080/permissoes     | { "authority": "ROLE_ADMIN" }                                  |
-| DELETE     | http://localhost:8080/permissoes/{id}| Não é necessário                                               |
 
+Verbo HTTPS         ENDPOINT                   JSON
+
+
+GET       localhost:8080/horarios           Não é necessário
+
+
+POST      localhost:8080/restaurantes      { "cnpj": "8546342609",
+                                             "nome": "Restaurante Japonês",
+                                             "descricao": "Estabelecimento de comida japonesa",
+                                             "cep": "05570-002",
+                                             "endereco": "Avenida do Estado n° 105",
+                                             "TaxaEntrega": 5.00,
+                                             "tempoDeEntregaMinimo": 40,
+                                             "tempoDeEntregaMaximo": 60,
+                                             "aprovado": true,
+                                             "tipoDeCozinha": Japonesa }
+                                             
+
+
+POST      Localhost:8080/restaurantes      { "cnpj": "1234566788",
+                                             "nome": "Restaurante Chinês",
+                                             "descricao": "Estabelecimento de comida chinesa",
+                                             "cep": "02260-001",
+                                             "endereco": "Avenida Central nº 45",
+                                             "TaxaEntrega": 10.00,
+                                             "tempoDeEntregaMinimo": 20,
+                                             "tempoDeEntregaMaximo": 60,
+                                             "aprovado": true,
+                                             "tipoDeCozinha": Chinesa }
+
+
+
+DELETE      Localhost:8080/restaurantes      É necessário

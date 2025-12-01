@@ -1,4 +1,4 @@
-package br.com.etechas.etecfood.Entity;
+package br.com.etechas.etecfood.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,7 +17,7 @@ public class HorarioFuncionamento {
     private Long id;
 
     @Column(name = "diaSemana")
-    private DayOfWeek diaSemana;
+    private String diaSemana;
 
     @Column(name = "horarioAbertura")
     private LocalTime horarioAbertura;
