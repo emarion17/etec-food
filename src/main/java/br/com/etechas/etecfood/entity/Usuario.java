@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class Usuario {
     @Id
     @Column(name = "id_usuario")
-    private Long ID;
+    private Long Id;
 
     @Column(name = "nome")
     private String nome;
@@ -23,12 +23,11 @@ public class Usuario {
     private String senha;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "")
+    @JoinTable(name = "Usuario_Permissao", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "permisso_id"))
     private List<Permissao> permissaoList;
 
-    //para deixar permissões:List neste espaço
 
-    @Column(name = "tentativaAcesso")
+    @Column(name = "tentativasAcesso")
     private Integer tentativasAcesso;
 
     @Column(name = "dataBloqueio")
