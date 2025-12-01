@@ -13,11 +13,12 @@ import java.time.LocalTime;
 @Table(name = "HorarioFuncionamento")
 public class HorarioFuncionamento {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_HF")
     private Long id;
 
     @Column(name = "diaSemana")
-    private DayOfWeek diaSemana;
+    private String diaSemana;
 
     @Column(name = "horarioAbertura")
     private LocalTime horarioAbertura;
