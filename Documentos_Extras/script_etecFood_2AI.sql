@@ -27,7 +27,7 @@ CREATE TABLE Usuario_Permissao (
     usuario_id BIGINT NOT NULL,
     permissao_id BIGINT NOT NULL,
     PRIMARY KEY (usuario_id, permissao_id),
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario),
+    FOREIGN KEY (usuario_id) REFERENCES TBL_Usuario(id_usuario),
     FOREIGN KEY (permissao_id) REFERENCES Permissao(id)
 );
 
